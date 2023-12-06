@@ -1,0 +1,46 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({
+    Name = "Miku Nakano Hub", 
+    HidePremium = false, 
+    SaveConfig = true, 
+    ConfigFolder = "Miku Nakano Hub"
+})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local x2code = {
+    "FUDD10",
+    "BIGNEWS",
+    "THEGREATACE",
+    "SUB2GAMERROBOT_EXP1",
+    "StrawHatMaine",
+    "Sub2OfficialNoobie",
+    "SUB2NOOBMASTER123",
+    "Sub2Daigrock",
+    "Axiore",
+    "TantaiGaming",
+    "JCWK",
+    "Starcodeheo",
+    "Sub2Fer999",
+    "Magicbus",
+    "Enyu_is_Pro",
+    "Bluxxy",
+    "KittGaming",
+}
+Tab:AddButton({
+	Name = "RedeemCode",
+	Callback = function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(value)
+       end
+
+       for i, v in pairs(x2code) do
+        RedeemCode(v)      
+       end 
+  	end    
+})
+
