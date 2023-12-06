@@ -35,10 +35,10 @@ Tab:AddButton({
 	Name = "RedeemCode",
 	Callback = function()
         function RedeemCode(value)
-            game:GetService("ReplicatedStorage").Remote.RedeemCode:InvokeServer(value)
+            game:GetService("ReplicatedStorage").Remote.Redeem:InvokeServer(value)
        end
 
-       for i, v in pairs(x2code) do
+       for i, v in pairs(x2Code) do
         RedeemCode(v)      
        end 
   	end    
