@@ -31,13 +31,13 @@ local x2code = {
     "Bluxxy",
     "KittGaming",
 }
-Tab:AddButton({
+
+Main:AddButton({
 	Name = "RedeemCode",
 	Callback = function()
         function RedeemCode(value)
-            game:GetService("ReplicatedStorage").Remote.Redeem:InvokeServer(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
        end
-
        for i, v in pairs(x2Code) do
         RedeemCode(v)      
        end 
