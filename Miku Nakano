@@ -12,7 +12,9 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local x2code = {
+Main:AddLabel("Code")
+
+local x2Code = {
     "FUDD10",
     "BIGNEWS",
     "THEGREATACE",
@@ -32,15 +34,17 @@ local x2code = {
     "KittGaming",
 }
 
+
 Main:AddButton({
-	Name = "RedeemCode",
-	Callback = function()
+    Name = "Điền tất cả Code",
+    Callback = function()
         function RedeemCode(value)
             game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
-       end
-       for i, v in pairs(x2Code) do
-        RedeemCode(v)      
-       end 
-  	end    
-})
+        end
+
+        for i, v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+    end
+}))
 
